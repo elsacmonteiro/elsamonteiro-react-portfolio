@@ -1,0 +1,15 @@
+
+---
+
+### ✅ Next Steps
+
+1. **Create the README.md**: In your project folder, create a file named `README.md` and paste the content above.
+
+2. **Customize the Contact Information**: Replace the email and social media links with your actual contact details.
+
+3. **Commit and Push**: After saving the changes, commit and push the `README.md` to your GitHub repository:
+
+   ```bash
+   git add README.md
+   git commit -m "Add detailed README"
+   git push
