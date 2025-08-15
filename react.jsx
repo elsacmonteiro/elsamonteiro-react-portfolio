@@ -189,235 +189,244 @@ const { useState, useEffect, useRef } = React;
             );
         }
 
-        // Skills Section Component
-        function SkillsSection() {
-            const [skillsVisible, setSkillsVisible] = useState(false);
 
-            const technicalSkills = [
-                { name: 'HTML5', level: 100, icon: 'fab fa-html5', color: 'text-orange-400' },
-                { name: 'CSS3', level: 100, icon: 'fab fa-css3-alt', color: 'text-blue-400' },
-                { name: 'JavaScript', level: 50, icon: 'fab fa-js-square', color: 'text-yellow-400' },
-                { name: 'React.js', level: 20, icon: 'fab fa-react', color: 'text-blue-400' },
-                { name: 'Figma ', level: 40, icon: 'fab fa-figma', color: 'text-cyan-400' },
-            ];
+           // Skills Section Component
+function SkillsSection() {
+    const [skillsVisible, setSkillsVisible] = useState(false);
 
-            useEffect(() => {
-                const timer = setTimeout(() => setSkillsVisible(true), 500);
-                return () => clearTimeout(timer);
-            }, []);
+    const technicalSkills = [
+        { name: 'HTML5', level: 100, icon: 'fab fa-html5', color: 'text-orange-400' },
+        { name: 'CSS3', level: 100, icon: 'fab fa-css3-alt', color: 'text-blue-400' },
+        { name: 'JavaScript', level: 50, icon: 'fab fa-js-square', color: 'text-yellow-400' },
+        { name: 'React.js', level: 20, icon: 'fab fa-react', color: 'text-blue-400' },
+        { name: 'Figma', level: 40, icon: 'fab fa-figma', color: 'text-cyan-400' },
+    ];
 
-            return React.createElement('section', { id: 'skills', className: 'py-20 px-4 bg-gray-900/30' },
-                React.createElement('div', { className: 'max-w-6xl mx-auto' },
-                    React.createElement('h2', { className: 'text-5xl md:text-6xl font-bold text-center mb-16 gradient-text' },
-                        'Skills'
-                    ),
-                    React.createElement('div', { className: 'mb-20' },
-                        React.createElement('h3', { className: 'text-3xl font-semibold mb-12 text-center text-purple-400' },
-                            'Technical Skills'
-                        ),
-                        React.createElement('div', { className: 'grid md:grid-cols-2 gap-8' },
-                            technicalSkills.map((skill, index) =>
+    useEffect(() => {
+        const timer = setTimeout(() => setSkillsVisible(true), 500);
+        return () => clearTimeout(timer);
+    }, []);
+
+    return React.createElement('section', { id: 'skills', className: 'py-20 px-4 bg-gray-900/30' },
+        React.createElement('div', { className: 'max-w-6xl mx-auto' },
+            React.createElement('h2', { className: 'text-5xl md:text-6xl font-bold text-center mb-16 gradient-text' }, 'Skills'),
+            React.createElement('div', { className: 'mb-20' },
+                React.createElement('h3', { className: 'text-3xl font-semibold mb-12 text-center text-purple-400' }, 'Technical Skills'),
+                React.createElement('div', { className: 'grid md:grid-cols-2 gap-8' },
+                    technicalSkills.map((skill, index) =>
+                        React.createElement('div', {
+                            key: skill.name,
+                            className: `glass-box transition-all duration-700 ${
+                                skillsVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+                            }`
+                        },
+                            // Nome e ícone
+                            React.createElement('div', { className: 'flex items-center justify-between mb-4' },
+                                React.createElement('div', { className: 'flex items-center space-x-3' },
+                                    React.createElement('i', { className: `${skill.icon} text-2xl ${skill.color}` }),
+                                    React.createElement('span', { className: 'text-white font-semibold' }, skill.name)
+                                ),
+                                React.createElement('span', { className: 'text-purple-400 font-bold' }, `${skill.level}%`)
+                            ),
+                            // Barra de progresso
+                            React.createElement('div', { className: 'bg-gray-700 rounded-full h-3 overflow-hidden' },
                                 React.createElement('div', {
-                                    key: skill.name,
-                                    className: `glass-effect p-6 rounded-xl transition-all duration-700 ${
-                                        skillsVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-                                    }`
-                                },
-                                    React.createElement('div', { className: 'flex items-center justify-between mb-4' },
-                                        React.createElement('div', { className: 'flex items-center space-x-3' },
-                                            React.createElement('i', { className: `${skill.icon} text-2xl ${skill.color}` }),
-                                            React.createElement('span', { className: 'text-white font-semibold' }, skill.name)
-                                        ),
-                                        React.createElement('span', { className: 'text-purple-400 font-bold' }, `${skill.level}%`)
-                                    ),
-                                    React.createElement('div', { className: 'bg-gray-700 rounded-full h-3 overflow-hidden' },
-                                        React.createElement('div', {
-                                            className: 'skill-bar rounded-full h-full',
-                                            style: { 
-                                                width: skillsVisible ? `${skill.level}%` : '0%',
-                                                transitionDelay: `${index * 200}ms`
-                                            }
-                                        })
-                                    )
-                                )
+                                    className: 'skill-bar rounded-full h-full bg-white transition-all duration-1000 ease-in-out',
+                                    style: {
+                                        width: skillsVisible ? `${skill.level}%` : '0%',
+                                        transitionDelay: `${index * 0.2}s`
+                                    }
+                                })
                             )
                         )
                     )
                 )
-            );
-        }
+            )
+        )
+    );
+}
+            // Projects Section Component
 
-        // Projects Section Component
-        function ProjectsSection() {
-            const [selectedProject, setSelectedProject] = useState(null);
-
-            const projects = [
-                {
-                    id: 1,
-                    title: 'Cloud Software Landing Page',
-                    description: 'Modern and responsive landing page project for a management software, highlighting cloud solutions, CRM features, and system integration capabilities',
-                    image: 'fas fa-cloud',
-                    color: 'from-purple-600 to-blue-600',
-                    technologies: ['HTML5', 'CSS3'],
-                    features: ['Responsive Design: Fully compatible with desktops, tablets, and mobile devices.', 'User-Friendly Interface: Easy navigation and intuitive design.'],
-                    details: 'Landing page project for a management software, highlighting cloud solutions, CRM features, and system integration capabilities.',
-                    github: 'https://github.com/elsacmonteiro/cloud-software-landing-page',
-                    page: 'https://elsacmonteiro.github.io/cloud-software-landing-page/'
-                },
-                {
-                    id: 2,
-                    title: 'Band Tribute Page',
-                    description: 'Arctic Monkeys Tribute Page — a minimalist, vintage-styled webpage dedicated to one of the most iconic rock bands of the 21st century',
-                    image: 'fas fa-music',
-                    color: 'from-green-600 to-teal-600',
-                    technologies: ['HTML5', 'CSS3', 'Flexbox'],
-                    features: ['Dynamic Layout: Adaptive to different screen sizes and orientations.', 'Responsive Design: Fully compatible with desktops, tablets, and mobile devices.', 'Interactive Links: Clicking on links should open in a new tab.'],
-                    details: 'A minimalist, vintage-styled webpage dedicated to one of the most iconic rock bands of the 21st century.',
-                    github: 'https://github.com/elsacmonteiro/arctic-monkeys-tribute-page',
-                    page: 'https://elsacmonteiro.github.io/arctic-monkeys-tribute-page/'
-                },
-                {
-                    id: 3,
-                    title: 'Software Demo Landing Page',
-                    description: 'Responsive landing page designed specifically for software companies to capture leads and request software demos..',
-                    image: 'fas fa-code',
-                    color: 'from-orange-600 to-red-600',
-                    technologies: ['HTML5', 'CSS3', 'Responsive Design'],
-                    features: ['Lead Capture Form', 'Email Validation', 'Clear Call-to-Action', 'Customizable Form Fields'],
-                    details: 'The page features an intuitive lead capture form that collects vital user details like name, email, phone number, and account type. It’s built to look stunning on all devices with its mobile-first, responsive design, making it perfect for any software company looking to gather leads effectively.',
-                    github: 'https://github.com/elsacmonteiro/software-demo-landing-page',
-                    page: 'https://elsacmonteiro.github.io/software-demo-landing-page/'
-                }
-            ];
-
-            const ProjectModal = ({ project, onClose }) => {
-                if (!project) return null;
-
-                return React.createElement('div', { className: 'fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4' },
-                    React.createElement('div', { className: 'glass-effect rounded-2xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto' },
-                        React.createElement('div', { className: 'flex justify-between items-center mb-6' },
-                            React.createElement('h3', { className: 'text-3xl font-bold gradient-text' }, project.title),
-                            React.createElement('button', {
-                                onClick: onClose,
-                                className: 'text-gray-400 hover:text-white text-2xl transition-colors'
-                            }, React.createElement('i', { className: 'fas fa-times' }))
+            function ProjectsSection() {
+                const [selectedProject, setSelectedProject] = useState(null);
+            
+                const projects = [
+                    {
+                        id: 1,
+                        category: 'Web Developer',
+                        title: 'Band Tribute Page',
+                        description: 'Arctic Monkeys Tribute Page — a minimalist, vintage-styled webpage dedicated to one of the most iconic rock bands of the 21st century',
+                        image: 'fas fa-music',
+                        color: 'from-green-600 to-teal-600',
+                        technologies: ['HTML5', 'CSS3', 'Flexbox'],
+                        features: ['Dynamic Layout: Adaptive to different screen sizes and orientations.', 'Responsive Design: Fully compatible with desktops, tablets, and mobile devices.', 'Interactive Links: Clicking on links should open in a new tab.'],
+                        details: 'A minimalist, vintage-styled webpage dedicated to one of the most iconic rock bands of the 21st century.',
+                        github: 'https://github.com/elsacmonteiro/arctic-monkeys-tribute-page',
+                        page: 'https://elsacmonteiro.github.io/arctic-monkeys-tribute-page/'
+                    },
+                    {
+                        id: 2,
+                        category: 'Web Developer',
+                        title: 'Software Demo Landing Page',
+                        description: 'Responsive landing page designed specifically for software companies to capture leads and request software demos..',
+                        image: 'fas fa-code',
+                        color: 'from-orange-600 to-red-600',
+                        technologies: ['HTML5', 'CSS3', 'Responsive Design'],
+                        features: ['Lead Capture Form', 'Email Validation', 'Clear Call-to-Action', 'Customizable Form Fields'],
+                        details: 'The page features an intuitive lead capture form that collects vital user details like name, email, phone number, and account type. It’s built to look stunning on all devices with its mobile-first, responsive design, making it perfect for any software company looking to gather leads effectively.',
+                        github: 'https://github.com/elsacmonteiro/software-demo-landing-page',
+                        page: 'https://elsacmonteiro.github.io/software-demo-landing-page/'
+                    }, 
+                    {
+                        id: 3,
+                        category: 'Web Design',
+                        title: 'Elara Lace — Brand Creation Process',
+                        description: 'Complete creative process of Elara Lace — from concept and brand identity to website design and social media strategy.',
+                        image: 'fas fa-paint-brush',
+                        color: 'from-pink-500 to-purple-500',
+                        technologies: ['Canva'],
+                        features: ['Web Design', 'Branding Design', 'Brand Guidelines', 'Logo Design', 'Social Media Strategy'],
+                        details: 'Complete creative process of Elara Lace — from concept and brand identity to website design and social media strategy.',
+                        github: '',
+                        page: 'https://www.behance.net/gallery/232129611/Elara-Lace-Brand-Creation-Process'
+                    }
+                ];
+            
+                const renderProjectCard = (project) =>
+                    React.createElement('div', {
+                        key: project.id,
+                        className: 'project-card rounded-2xl p-6 cursor-pointer',
+                        onClick: () => setSelectedProject(project)
+                    },
+                        React.createElement('div', { className: `bg-gradient-to-br ${project.color} rounded-xl p-8 text-center mb-6` },
+                            React.createElement('i', { className: `${project.image} text-5xl text-white` })
                         ),
-                        React.createElement('div', { className: 'grid md:grid-cols-2 gap-8' },
-                            React.createElement('div', null,
-                                React.createElement('div', { className: `bg-gradient-to-br ${project.color} rounded-xl p-12 text-center mb-6` },
-                                    React.createElement('i', { className: `${project.image} text-8xl text-white` })
-                                ),
-                                React.createElement('div', { className: 'flex gap-4 justify-center' },
-                                    React.createElement('a', {
-                                        href: project.github,
-                                        target: '_blank',
-                                        rel: 'noopener noreferrer',
-                                        className: 'flex items-center space-x-2 bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg transition-colors'
-                                    },
-                                        React.createElement('i', { className: 'fab fa-github' }),
-                                        React.createElement('span', null, 'GitHub')
-                                    ),
-                                    React.createElement('a', {
-                                        href: project.page,
-                                        target: '_blank',
-                                        rel: 'noopener noreferrer',
-                                        className: `flex items-center space-x-2 bg-gradient-to-r ${project.color} hover:opacity-80 px-4 py-2 rounded-lg transition-opacity`
-                                    },
-                                        React.createElement('i', { className: 'fas fa-external-link-alt' }),
-                                        React.createElement('span', null, 'Page')
-                                    )
-                                )
+                        React.createElement('h3', { className: 'text-xl font-bold mb-3 text-white' }, project.title),
+                        React.createElement('p', { className: 'text-gray-400 mb-4 text-sm leading-relaxed' }, project.description),
+                        React.createElement('div', { className: 'flex flex-wrap gap-2 mb-4' },
+                            project.technologies.slice(0, 3).map(tech =>
+                                React.createElement('span', {
+                                    key: tech,
+                                    className: 'bg-gray-700/50 text-gray-300 px-2 py-1 rounded text-xs'
+                                }, tech)
                             ),
-                            React.createElement('div', { className: 'space-y-6' },
+                            project.technologies.length > 3 && React.createElement('span', {
+                                className: 'bg-gray-700/50 text-gray-300 px-2 py-1 rounded text-xs'
+                            }, `+${project.technologies.length - 3}`)
+                        ),
+                        React.createElement('button', {
+                            className: `w-full bg-gradient-to-r ${project.color} hover:opacity-80 text-white font-semibold py-2 rounded-lg transition-all`
+                        }, 'View Details')
+                    );
+            
+                const ProjectModal = ({ project, onClose }) => {
+                    if (!project) return null;
+            
+                    return React.createElement('div', { className: 'fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4' },
+                        React.createElement('div', { className: 'glass-effect rounded-2xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto' },
+                            React.createElement('div', { className: 'flex justify-between items-center mb-6' },
+                                React.createElement('h3', { className: 'text-3xl font-bold gradient-text' }, project.title),
+                                React.createElement('button', {
+                                    onClick: onClose,
+                                    className: 'text-gray-400 hover:text-white text-2xl transition-colors'
+                                }, React.createElement('i', { className: 'fas fa-times' }))
+                            ),
+                            React.createElement('div', { className: 'grid md:grid-cols-2 gap-8' },
                                 React.createElement('div', null,
-                                    React.createElement('h4', { className: 'text-xl font-semibold mb-3 text-purple-400' }, 'Description'),
-                                    React.createElement('p', { className: 'text-gray-300 leading-relaxed' }, project.details)
-                                ),
-                                React.createElement('div', null,
-                                    React.createElement('h4', { className: 'text-xl font-semibold mb-3 text-purple-400' }, 'Technologies'),
-                                    React.createElement('div', { className: 'flex flex-wrap gap-2' },
-                                        project.technologies.map(tech =>
-                                            React.createElement('span', {
-                                                key: tech,
-                                                className: 'bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30'
-                                            }, tech)
+                                    React.createElement('div', { className: `bg-gradient-to-br ${project.color} rounded-xl p-12 text-center mb-6` },
+                                        React.createElement('i', { className: `${project.image} text-8xl text-white` })
+                                    ),
+                                    React.createElement('div', { className: 'flex gap-4 justify-center' },
+                                        React.createElement('a', {
+                                            href: project.github,
+                                            target: '_blank',
+                                            rel: 'noopener noreferrer',
+                                            className: 'flex items-center space-x-2 bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg transition-colors'
+                                        },
+                                            React.createElement('i', { className: 'fab fa-github' }),
+                                            React.createElement('span', null, 'GitHub')
+                                        ),
+                                        React.createElement('a', {
+                                            href: project.page,
+                                            target: '_blank',
+                                            rel: 'noopener noreferrer',
+                                            className: `flex items-center space-x-2 bg-gradient-to-r ${project.color} hover:opacity-80 px-4 py-2 rounded-lg transition-opacity`
+                                        },
+                                            React.createElement('i', { className: 'fas fa-external-link-alt' }),
+                                            React.createElement('span', null, 'Page')
                                         )
                                     )
                                 ),
-                                React.createElement('div', null,
-                                    React.createElement('h4', { className: 'text-xl font-semibold mb-3 text-purple-400' }, 'Features'),
-                                    React.createElement('ul', { className: 'space-y-2' },
-                                        project.features.map(feature =>
-                                            React.createElement('li', {
-                                                key: feature,
-                                                className: 'flex items-center text-gray-300'
-                                            },
-                                                React.createElement('i', { className: 'fas fa-check text-green-400 mr-3' }),
-                                                feature
+                                React.createElement('div', { className: 'space-y-6' },
+                                    React.createElement('div', null,
+                                        React.createElement('h4', { className: 'text-xl font-semibold mb-3 text-purple-400' }, 'Description'),
+                                        React.createElement('p', { className: 'text-gray-300 leading-relaxed' }, project.details)
+                                    ),
+                                    React.createElement('div', null,
+                                        React.createElement('h4', { className: 'text-xl font-semibold mb-3 text-purple-400' }, 'Technologies'),
+                                        React.createElement('div', { className: 'flex flex-wrap gap-2' },
+                                            project.technologies.map(tech =>
+                                                React.createElement('span', {
+                                                    key: tech,
+                                                    className: 'bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30'
+                                                }, tech)
+                                            )
+                                        )
+                                    ),
+                                    React.createElement('div', null,
+                                        React.createElement('h4', { className: 'text-xl font-semibold mb-3 text-purple-400' }, 'Features'),
+                                        React.createElement('ul', { className: 'space-y-2' },
+                                            project.features.map(feature =>
+                                                React.createElement('li', {
+                                                    key: feature,
+                                                    className: 'flex items-center text-gray-300'
+                                                },
+                                                    React.createElement('i', { className: 'fas fa-check text-green-400 mr-3' }),
+                                                    feature
+                                                )
                                             )
                                         )
                                     )
                                 )
                             )
                         )
-                    )
-                );
-            };
-
-            return React.createElement('section', { id: 'projects', className: 'py-20 px-4' },
-                React.createElement('div', { className: 'max-w-6xl mx-auto' },
-                    React.createElement('h2', { className: 'text-5xl md:text-6xl font-bold text-center mb-16 gradient-text' },
-                        'My Projets'
-                    ),
-                    React.createElement('div', { className: 'grid md:grid-cols-3 gap-8 mb-12' },
-                        projects.map((project, index) =>
-                            React.createElement('div', {
-                                key: project.id,
-                                className: 'project-card rounded-2xl p-6 cursor-pointer',
-                                onClick: () => setSelectedProject(project)
+                    );
+                };
+            
+                return React.createElement('section', { id: 'projects', className: 'py-20 px-4' },
+                    React.createElement('div', { className: 'max-w-6xl mx-auto' },
+                        React.createElement('h2', { className: 'text-5xl md:text-6xl font-bold text-center mb-16 gradient-text' }, 'My Projects'),
+            
+                        // Secção Web Design
+                        React.createElement('h3', { className: 'text-3xl font-semibold mb-8 text-center text-purple-400' }, 'Web Design'),
+                        React.createElement('div', { className: 'grid md:grid-cols-3 gap-8 mb-12' },
+                            projects.filter(p => p.category === 'Web Design').map(renderProjectCard)
+                        ),
+            
+                        // Secção Web Developer
+                        React.createElement('h3', { className: 'text-3xl font-semibold mb-8 text-center text-purple-400' }, 'Web Developer'),
+                        React.createElement('div', { className: 'grid md:grid-cols-3 gap-8 mb-12' },
+                            projects.filter(p => p.category === 'Web Developer').map(renderProjectCard)
+                        ),
+            
+                        React.createElement('div', { className: 'text-center' },
+                            React.createElement('a', {
+                                href: 'https://github.com/elsacmonteiro',
+                                target: '_blank',
+                                rel: 'noopener noreferrer',
+                                className: 'inline-flex items-center bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 px-8 py-3 rounded-xl font-semibold transition-all transform hover:scale-105 text-white'
                             },
-                                React.createElement('div', { className: `bg-gradient-to-br ${project.color} rounded-xl p-8 text-center mb-6` },
-                                    React.createElement('i', { className: `${project.image} text-5xl text-white` })
-                                ),
-                                React.createElement('h3', { className: 'text-xl font-bold mb-3 text-white' }, project.title),
-                                React.createElement('p', { className: 'text-gray-400 mb-4 text-sm leading-relaxed' }, project.description),
-                                React.createElement('div', { className: 'flex flex-wrap gap-2 mb-4' },
-                                    project.technologies.slice(0, 3).map(tech =>
-                                        React.createElement('span', {
-                                            key: tech,
-                                            className: 'bg-gray-700/50 text-gray-300 px-2 py-1 rounded text-xs'
-                                        }, tech)
-                                    ),
-                                    project.technologies.length > 3 && React.createElement('span', {
-                                        className: 'bg-gray-700/50 text-gray-300 px-2 py-1 rounded text-xs'
-                                    }, `+${project.technologies.length - 3}`)
-                                ),
-                                React.createElement('button', {
-                                    className: `w-full bg-gradient-to-r ${project.color} hover:opacity-80 text-white font-semibold py-2 rounded-lg transition-all`
-                                }, 'View Details')
+                                React.createElement('i', { className: 'fab fa-github mr-2' }),
+                                'View more on GitHub'
                             )
                         )
                     ),
-                    React.createElement('div', { className: 'text-center' },
-                        React.createElement('a', {
-                            href: 'https://github.com/elsacmonteiro',
-                            target: '_blank',
-                            rel: 'noopener noreferrer',
-                            className: 'inline-flex items-center bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 px-8 py-3 rounded-xl font-semibold transition-all transform hover:scale-105 text-white'
-        },
-        React.createElement('i', { className: 'fab fa-github mr-2' }),
-        'View more on GitHub'
-
-                        )
-                    )
-                ),
-                React.createElement(ProjectModal, {
-                    project: selectedProject,
-                    onClose: () => setSelectedProject(null)
-                })
-            );
-        }
-
+                    React.createElement(ProjectModal, {
+                        project: selectedProject,
+                        onClose: () => setSelectedProject(null)
+                    })
+                );
+            }
         // Contact Section Component
         function ContactSection() {
             const [formData, setFormData] = useState({
