@@ -155,7 +155,7 @@ const { useState, useEffect, useRef } = React;
                         ),
                         React.createElement('div', { className: 'space-y-6 transition-all duration-1000 delay-300' },
                             React.createElement('h3', { className: 'text-3xl font-semibold text-purple-400' },
-                                'Hi! I’m Elsa Monteiro, a passionate Front-End Developer and Web Designer from Porto, Portugal 🇵🇹'
+                                'Hi! I’m Elsa Monteiro, a passionate Front-End Developer and Web Designer from Porto, Portugal.'
                             ),
                             React.createElement('p', { className: 'text-gray-300 leading-relaxed text-lg' },
                                 'Born and raised in Porto, I carry the city’s spirit (and yes, the accent to prove it). I’m passionate about design, curious by nature, and endlessly fascinated by how creativity and technology can work together. I’m also a coffee enthusiast, Italian food devotee, and the kind of person who can get lost for hours in a good romance book or dancing to recharge my energy.'
@@ -300,8 +300,28 @@ function SkillsSection() {
                     technologies: ['Canva', 'Figma'],
                     features: ['Web Design', 'UX/UI Design', 'E-commerce', 'Responsive Design', 'Digital Experience'],
                     details: 'Complete creative process of Elara Lace — from concept and brand identity to website design and social media strategy.',
-                    page: 'https://elsacmonteiro.github.io/elsamonteiro-react-portfolio/'
-                }
+                    page: 'https://www.behance.net/gallery/233492595/Elara-Lace-Website-Design-V2'
+                },
+                {
+                    id: 5,
+                    category: 'Web Developer',
+                    title: 'Elara Lace — Website',
+                    description: 'Development of the official Elara Lace website, combining a minimalist layout, pastel tones, and refined typography to deliver an elegant digital experience.',
+                    image: 'fas fa-code',
+                    color: 'from-blue-500 to-indigo-500',
+                    technologies: ['HTML5', 'CSS3', 'TypeScript', 'React', 'Vite', 'TailwindCSS'],
+                    features: [
+                            'Custom Web Development',
+                            'Responsive & Mobile-First Design',
+                            'E-commerce Integration',
+                            'Optimized Performance',
+                            'UX/UI Focused Experience'
+                        ],
+                    details: 'Complete development and design of Elara Lace — from brand identity to a fully functional website. Built with React and TypeScript for scalability, TailwindCSS for rapid styling, and optimized for responsiveness across all devices. Features include intuitive navigation, clean aesthetics, and an enhanced e-commerce experience.',
+                    github: 'https://github.com/elsacmonteiro/elara-lace-website',
+                    page: 'https://elara-lace-website.vercel.app/'
+                    },
+
             ];
         
             const renderProjectCard = (project) => 
