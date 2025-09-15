@@ -155,7 +155,7 @@ const { useState, useEffect, useRef } = React;
                         ),
                         React.createElement('div', { className: 'space-y-6 transition-all duration-1000 delay-300' },
                             React.createElement('h3', { className: 'text-3xl font-semibold text-purple-400' },
-                                'Hi! I’m Elsa Monteiro, a passionate Front-End Developer and Web Designer from Porto, Portugal.'
+                                'Hi! I’m Elsa Monteiro, a passionate UI/UX Designer and Front-End Developer from Porto, Portugal.'
                             ),
                             React.createElement('p', { className: 'text-gray-300 leading-relaxed text-lg' },
                                 'Born and raised in Porto, I carry the city’s spirit (and yes, the accent to prove it). I’m passionate about design, curious by nature, and endlessly fascinated by how creativity and technology can work together. I’m also a coffee enthusiast, Italian food devotee, and the kind of person who can get lost for hours in a good romance book or dancing to recharge my energy.'
@@ -181,10 +181,12 @@ const { useState, useEffect, useRef } = React;
                                 React.createElement('span', { className: 'bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full text-sm border border-blue-500/30' }, 'CSS3'),
                                 React.createElement('span', { className: 'bg-green-500/20 text-green-300 px-4 py-2 rounded-full text-sm border border-green-500/30' }, 'JavaScript'),
                                 React.createElement('span', { className: 'bg-red-500/20 text-red-300 px-4 py-2 rounded-full text-sm border border-red-500/30' }, 'React.js'),
+                                React.createElement('span', { className: 'bg-indigo-500/20 text-indigo-300 px-4 py-2 rounded-full text-sm border border-indigo-500/30' }, 'TypeScript'),
                                 React.createElement('span', { className: 'bg-pink-500/20 text-pink-300 px-4 py-2 rounded-full text-sm border border-pink-500/30' }, 'UI/UX Design'),
                                 React.createElement('span', { className: 'bg-yellow-500/20 text-yellow-300 px-4 py-2 rounded-full text-sm border border-yellow-500/30' }, 'Figma'),
-                                React.createElement('span', { className: 'bg-cyan-500/20 text-cyan-300 px-4 py-2 rounded-full text-sm border border-cyan-500/30' }, 'Canva')
-                            )
+                                React.createElement('span', { className: 'bg-cyan-500/20 text-cyan-300 px-4 py-2 rounded-full text-sm border border-cyan-500/30' }, 'Canva'),
+                                React.createElement('span', { className: 'bg-gray-500/20 text-gray-300 px-4 py-2 rounded-full text-sm border border-gray-500/30' }, 'Adobe XD'),
+                            )                           
                         )
                     )
                 )
@@ -198,9 +200,10 @@ function SkillsSection() {
     const technicalSkills = [
         { name: 'HTML5', level: 100, icon: 'fab fa-html5', color: 'text-orange-400' },
         { name: 'CSS3', level: 100, icon: 'fab fa-css3-alt', color: 'text-blue-400' },
-        { name: 'JavaScript', level: 50, icon: 'fab fa-js-square', color: 'text-yellow-400' },
-        { name: 'React.js', level: 20, icon: 'fab fa-react', color: 'text-blue-400' },
-        { name: 'Figma', level: 40, icon: 'fab fa-figma', color: 'text-cyan-400' },
+        { name: 'JavaScript', level: 60, icon: 'fab fa-js-square', color: 'text-yellow-400'},
+        { name: 'React', level: 40, icon: 'fab fa-react', color: 'text-blue-400' },
+        { name: 'GitHub', level: 70, icon: 'fab fa-github', color: 'text-gray-400' },
+        { name: 'Figma', level: 70, icon: 'fab fa-figma', color: 'text-cyan-400' },    
     ];
 
     useEffect(() => {
@@ -294,12 +297,12 @@ function SkillsSection() {
                     id: 4,
                     category: 'Web Design',
                     title: 'Elara Lace — Website Design',
-                    description: 'The website design combines a minimal layout, pastel color palette, and elegant typography.',
+                    description: 'A modern website design for Elara Lace, crafted to highlight the brand’s elegance while ensuring a seamless shopping experience.',
                     image: 'fas fa-paint-brush',
                     color: 'from-yellow-500 to-orange-500',
-                    technologies: ['Canva', 'Figma'],
+                    technologies: ['Figma'],
                     features: ['Web Design', 'UX/UI Design', 'E-commerce', 'Responsive Design', 'Digital Experience'],
-                    details: 'Complete creative process of Elara Lace — from concept and brand identity to website design and social media strategy.',
+                    details: 'Project focused on creating a responsive, user-friendly website with a clean aesthetic that reflects the brand’s identity',
                     page: 'https://www.behance.net/gallery/233492595/Elara-Lace-Website-Design-V2'
                 },
                 {
@@ -321,6 +324,26 @@ function SkillsSection() {
                     github: 'https://github.com/elsacmonteiro/elara-lace-website',
                     page: 'https://elara-lace-website.vercel.app/'
                     },
+                    {
+                        id: 6,
+                        category: 'Web Design',
+                        title: 'Lumi Restaurant — Website',
+                        description: 'Design of the Lumi Restaurant website in Figma, focused on creating a modern, elegant and user-friendly dining experience online.',
+                        image: 'fas fa-paint-brush',
+                        color: 'from-purple-600 to-turquoise-600',
+                        technologies: ['Figma', 'Adobe Photoshop'],
+                        features: [
+                            'UI/UX Design',
+                            'Responsive Layouts',
+                            'Interactive Prototyping',
+                            'Menu & Reservation Flow',
+                            'Visual Identity Alignment'
+                        ],
+                        details: 'Complete website design for Lumi Restaurant, created in Figma. The project included moodboards, wireframes, and high-fidelity mockups with a focus on responsive design and intuitive user journeys. Special attention was given to showcasing the restaurant’s brand identity, menu presentation, and an accessible reservation flow, ensuring a seamless digital dining experience.',
+                        page: 'https://www.behance.net/gallery/234547835/LUMI-Restaurant-Elegant-Website-Redesign-(UXUI)',
+                    }
+                    
+                    
 
             ];
         
