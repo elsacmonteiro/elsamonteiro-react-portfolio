@@ -98,9 +98,9 @@ const { useState, useEffect, useRef } = React;
                         )
                     ),
                     React.createElement('h1', { className: 'text-6xl md:text-8xl font-bold mb-6' },
-                        React.createElement('span', { className: 'gradient-text' }, 'Web Developer'),
+                        React.createElement('span', { className: 'gradient-text' }, 'UX/UI Designer'),
                         React.createElement('br'),
-                        React.createElement('span', { className: 'typewriter' }, '& UI/UX Designer')
+                        React.createElement('span', { className: 'typewriter' }, '& Web Developer')
                     ),
                     React.createElement('p', { className: 'text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto' },
                         'Where Design Meets Code, Crafting Interactive Web Experiences.',
@@ -260,91 +260,95 @@ function SkillsSection() {
                     category: 'Web Developer',
                     title: 'Band Tribute Page',
                     description: 'Arctic Monkeys Tribute Page — a minimalist, vintage-styled webpage dedicated to one of the most iconic rock bands of the 21st century',
-                    image: 'fas fa-music',
-                    color: 'from-green-600 to-teal-600',
+                    thumb: 'assets/tribute-thumb.png',
+                    color: 'from-green-600 to-teal-600',   
                     technologies: ['HTML5', 'CSS3', 'Flexbox'],
-                    features: ['Dynamic Layout: Adaptive to different screen sizes and orientations.', 'Responsive Design: Fully compatible with desktops, tablets, and mobile devices.', 'Interactive Links: Clicking on links should open in a new tab.'],
+                    features: [
+                      'Dynamic Layout: Adaptive to different screen sizes and orientations.',
+                      'Responsive Design: Fully compatible with desktops, tablets, and mobile devices.',
+                      'Interactive Links: Clicking on links should open in a new tab.'
+                    ],
                     details: 'A minimalist, vintage-styled webpage dedicated to one of the most iconic rock bands of the 21st century.',
                     github: 'https://github.com/elsacmonteiro/arctic-monkeys-tribute-page',
                     page: 'https://elsacmonteiro.github.io/arctic-monkeys-tribute-page/'
-                },
-                {
+                  },
+                  {
                     id: 2,
                     category: 'Web Developer',
                     title: 'Software Demo Landing Page',
                     description: 'Responsive landing page designed specifically for software companies to capture leads and request software demos.',
-                    image: 'fas fa-code',
-                    color: 'from-orange-600 to-red-600',
+                    thumb: 'assets/software-demo-thumb.png',
+                    color: 'from-orange-600 to-red-600',   
                     technologies: ['HTML5', 'CSS3', 'Responsive Design'],
                     features: ['Lead Capture Form', 'Email Validation', 'Clear Call-to-Action', 'Customizable Form Fields'],
                     details: 'The page features an intuitive lead capture form that collects vital user details like name, email, phone number, and account type.',
                     github: 'https://github.com/elsacmonteiro/software-demo-landing-page',
                     page: 'https://elsacmonteiro.github.io/software-demo-landing-page/'
-                }, 
-                {
+                  }, 
+                  {
                     id: 3,
-                    category: 'Web Design',
+                    category: 'UX/UI Designer',
                     title: 'Elara Lace — Brand Creation Process',
                     description: 'Complete creative process of Elara Lace — from concept and brand identity to website design and social media strategy.',
-                    image: 'fas fa-paint-brush',
-                    color: 'from-pink-500 to-purple-500',
+                    thumb: 'assets/elara-brand-design-thumb.png',
+                    color: 'from-pink-500 to-purple-500',  
                     technologies: ['Canva'],
                     features: ['Web Design', 'Branding Design', 'Brand Guidelines', 'Logo Design', 'Social Media Strategy'],
                     details: 'Complete creative process of Elara Lace — from concept and brand identity to website design and social media strategy',
                     page: 'https://www.behance.net/gallery/232129611/Elara-Lace-Brand-Creation-Process'
-                },
-                {
+                  },
+                  {
                     id: 4,
-                    category: 'Web Design',
-                    title: 'Elara Lace — Website Design',
-                    description: 'A modern website design for Elara Lace, crafted to highlight the brand’s elegance while ensuring a seamless shopping experience.',
-                    image: 'fas fa-paint-brush',
+                    category: 'UX/UI Designer',
+                    title: 'Elara Lace — UX/UI Case Study',
+                    description: 'UX/UI design for Elara Lace, combining refined aesthetics with an intuitive e-commerce flow to deliver a seamless shopping experience.',
+                    thumb: 'assets/elara-design-thumb.png',
                     color: 'from-yellow-500 to-orange-500',
                     technologies: ['Figma'],
-                    features: ['Web Design', 'UX/UI Design', 'E-commerce', 'Responsive Design', 'Digital Experience'],
-                    details: 'Project focused on creating a responsive, user-friendly website with a clean aesthetic that reflects the brand’s identity',
+                    features: ['UX Research & Wireframing', 'UI Design System', 'Responsive Design', 'E-commerce Integration', 'UX/UI Focused Experience'],
+                    details: 'UX/UI case study of a responsive e-commerce website, combining clean aesthetics with intuitive flows to reflect the brand’s elegance and enhance the shopping experience.',
+                    caseUrl: 'projects/elara.html',
                     page: 'https://www.behance.net/gallery/233492595/Elara-Lace-Website-Design-V2'
-                },
-                {
+                  },
+                  {
                     id: 5,
                     category: 'Web Developer',
                     title: 'Elara Lace — Website',
                     description: 'Development of the official Elara Lace website, combining a minimalist layout, pastel tones, and refined typography to deliver an elegant digital experience.',
-                    image: 'fas fa-code',
+                    thumb: 'assets/elara-dev-thumb.png',
                     color: 'from-blue-500 to-indigo-500',
                     technologies: ['HTML5', 'CSS3', 'TypeScript', 'React', 'Vite', 'TailwindCSS'],
                     features: [
-                            'Custom Web Development',
-                            'Responsive & Mobile-First Design',
-                            'E-commerce Integration',
-                            'Optimized Performance',
-                            'UX/UI Focused Experience'
-                        ],
-                    details: 'Complete development and design of Elara Lace — from brand identity to a fully functional website. Built with React and TypeScript for scalability, TailwindCSS for rapid styling, and optimized for responsiveness across all devices. Features include intuitive navigation, clean aesthetics, and an enhanced e-commerce experience.',
+                      'Custom Web Development',
+                      'Responsive & Mobile-First Design',
+                      'E-commerce Integration',
+                      'Optimized Performance',
+                      'UX/UI Focused Experience'
+                    ],
+                    details: 'Complete development and design of Elara Lace — from brand identity to a fully functional website...',
                     github: 'https://github.com/elsacmonteiro/elara-lace-website',
                     page: 'https://elara-lace-website.vercel.app/'
-                    },
-                    {
-                        id: 6,
-                        category: 'Web Design',
-                        title: 'Lumi Restaurant — Website',
-                        description: 'Design of the Lumi Restaurant website in Figma, focused on creating a modern, elegant and user-friendly dining experience online.',
-                        image: 'fas fa-paint-brush',
-                        color: 'from-purple-600 to-turquoise-600',
-                        technologies: ['Figma', 'Adobe Photoshop'],
-                        features: [
-                            'UI/UX Design',
-                            'Responsive Layouts',
-                            'Interactive Prototyping',
-                            'Menu & Reservation Flow',
-                            'Visual Identity Alignment'
-                        ],
-                        details: 'Complete website design for Lumi Restaurant, created in Figma. The project included moodboards, wireframes, and high-fidelity mockups with a focus on responsive design and intuitive user journeys. Special attention was given to showcasing the restaurant’s brand identity, menu presentation, and an accessible reservation flow, ensuring a seamless digital dining experience.',
-                        page: 'https://www.behance.net/gallery/234547835/LUMI-Restaurant-Elegant-Website-Redesign-(UXUI)',
-                    }
-                    
-                    
-
+                  },
+                  {
+                    id: 6,
+                    category: 'UX/UI Designer',
+                    title: 'LUMI Restaurant — UX/UI Case Study',
+                    description: 'UX/UI case study for LUMI Restaurant, blending modern elegance with clear user flows to create a smooth and engaging dining experience online.',
+                    thumb: 'assets/lumi-thumb.png',
+                    color: 'from-purple-800 to-indigo-900',
+                    technologies: ['Figma', 'Adobe Photoshop'],
+                    features: [
+                      'UX Research & Wireframing',
+                      'Hi-fi UI Design & Prototyping',
+                      'Interactive Prototyping',
+                      'Menu & Reservation Flow',
+                      'Visual Identity Alignment'
+                    ],
+                    details: 'UX/UI case study for LUMI Restaurant, designed in Figma to streamline reservations, showcase the seasonal menu, and reinforce the brand’s modern dining identity.',
+                    caseUrl: 'projects/lumi.html',
+                    page: 'https://www.behance.net/gallery/234547835/LUMI-Restaurant-Elegant-Website-Redesign-(UXUI)'
+                  }
+                  
             ];
         
             const renderProjectCard = (project) => 
@@ -353,9 +357,20 @@ function SkillsSection() {
                     className: 'project-card rounded-2xl p-6 cursor-pointer max-w-xs w-full',
                     onClick: () => setSelectedProject(project)
                 },
-                    React.createElement('div', { className: `bg-gradient-to-br ${project.color} rounded-xl p-8 text-center mb-6` },
-                        React.createElement('i', { className: `${project.image} text-5xl text-white` })
-                    ),
+                    // thumbnail (if provided) OR gradient+icon fallback
+                    project.thumb
+                        ? React.createElement('div', { className: 'rounded-xl overflow-hidden mb-6' },
+                            React.createElement('img', {
+                                src: project.thumb,
+                                alt: project.title,
+                                className: 'w-full h-40 object-cover block border border-white/20 rounded-lg',
+                                loading: 'lazy'
+                            })
+                          )
+                        : React.createElement('div', { className: `bg-gradient-to-br ${project.color} rounded-xl p-8 text-center mb-6` },
+                            React.createElement('i', { className: `${project.image} text-5xl text-white` })
+                          ),
+            
                     React.createElement('h3', { className: 'text-xl font-bold mb-3 text-white text-center' }, project.title),
                     React.createElement('p', { className: 'text-gray-400 mb-4 text-sm leading-relaxed text-center' }, project.description),
                     React.createElement('div', { className: 'flex flex-wrap gap-2 justify-center mb-4' },
@@ -372,91 +387,147 @@ function SkillsSection() {
                     React.createElement('button', {
                         className: `w-full bg-gradient-to-r ${project.color} hover:opacity-80 text-white font-semibold py-2 rounded-lg transition-all`
                     }, 'View Details')
-                );
+                );            
+            
         
-            const ProjectModal = ({ project, onClose }) => {
-                if (!project) return null;
-        
-                return React.createElement('div', { className: 'fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4' },
-                    React.createElement('div', { className: 'glass-effect rounded-2xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto' },
-                        React.createElement('div', { className: 'flex justify-between items-center mb-6' },
-                            React.createElement('h3', { className: 'text-3xl font-bold gradient-text' }, project.title),
-                            React.createElement('button', {
-                                onClick: onClose,
-                                className: 'text-gray-400 hover:text-white text-2xl transition-colors'
-                            }, React.createElement('i', { className: 'fas fa-times' }))
+                const ProjectModal = ({ project, onClose }) => {
+                    if (!project) return null;
+                  
+                    return React.createElement(
+                      'div',
+                      { className: 'fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4' },
+                      React.createElement(
+                        'div',
+                        { className: 'glass-effect rounded-2xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto' },
+                        // header
+                        React.createElement(
+                          'div',
+                          { className: 'flex justify-between items-center mb-6' },
+                          React.createElement('h3', { className: 'text-3xl font-bold gradient-text' }, project.title),
+                          React.createElement(
+                            'button',
+                            { onClick: onClose, className: 'text-gray-400 hover:text-white text-2xl transition-colors' },
+                            React.createElement('i', { className: 'fas fa-times' })
+                          )
                         ),
-                        React.createElement('div', { className: 'grid md:grid-cols-2 gap-8' },
-                            React.createElement('div', null,
-                                React.createElement('div', { className: `bg-gradient-to-br ${project.color} rounded-xl p-12 text-center mb-6` },
-                                    React.createElement('i', { className: `${project.image} text-8xl text-white` })
-                                ),
-                                React.createElement('div', { className: 'flex gap-4 justify-center' },
-                                    project.category !== 'Web Design' && project.github && React.createElement('a', {
-                                        href: project.github,
-                                        target: '_blank',
-                                        rel: 'noopener noreferrer',
-                                        className: 'flex items-center space-x-2 bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg transition-colors'
-                                    },
-                                        React.createElement('i', { className: 'fab fa-github' }),
-                                        React.createElement('span', null, 'GitHub')
-                                    ),
-                                    React.createElement('a', {
-                                        href: project.page,
-                                        target: '_blank',
-                                        rel: 'noopener noreferrer',
-                                        className: `flex items-center space-x-2 bg-gradient-to-r ${project.color} hover:opacity-80 px-4 py-2 rounded-lg transition-opacity`
-                                    },
-                                        React.createElement('i', { className: 'fas fa-external-link-alt' }),
-                                        React.createElement('span', null, project.category === 'Web Design' ? 'Behance' : 'Page')
-                                    )
+                  
+                        // body
+                        React.createElement(
+                          'div',
+                          { className: 'grid md:grid-cols-2 gap-8' },
+                  
+                          // left column (image + buttons)
+                          React.createElement(
+                            'div',
+                            null,
+                  
+                            // 👇 thumbnail (or modalImage) with thin white border; fallback to gradient+icon
+                            (project.modalImage || project.thumb)
+                              ? React.createElement(
+                                  'div',
+                                  { className: 'mb-6 rounded-xl overflow-hidden' },
+                                  React.createElement('img', {
+                                    src: project.modalImage || project.thumb,
+                                    alt: project.title,
+                                    className: 'w-full h-56 object-cover block border border-white/20 rounded-xl',
+                                    loading: 'lazy'
+                                  })
                                 )
-                            ),
-                            React.createElement('div', { className: 'space-y-6' },
-                                React.createElement('div', null,
-                                    React.createElement('h4', { className: 'text-xl font-semibold mb-3 text-purple-400' }, 'Description'),
-                                    React.createElement('p', { className: 'text-gray-300 leading-relaxed' }, project.details)
+                              : React.createElement(
+                                  'div',
+                                  { className: `bg-gradient-to-br ${project.color} rounded-xl p-12 text-center mb-6` },
+                                  React.createElement('i', { className: `${project.image} text-8xl text-white` })
                                 ),
-                                React.createElement('div', null,
-                                    React.createElement('h4', { className: 'text-xl font-semibold mb-3 text-purple-400' }, 'Technologies'),
-                                    React.createElement('div', { className: 'flex flex-wrap gap-2' },
-                                        project.technologies.map(tech =>
-                                            React.createElement('span', {
-                                                key: tech,
-                                                className: 'bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30'
-                                            }, tech)
-                                        )
-                                    )
+                  
+                            // buttons
+                            React.createElement(
+                              'div',
+                              { className: 'flex gap-4 justify-center' },
+                              project.category !== 'Web Design' &&
+                                project.github &&
+                                React.createElement(
+                                  'a',
+                                  {
+                                    href: project.github,
+                                    target: '_blank',
+                                    rel: 'noopener noreferrer',
+                                    className: 'flex items-center space-x-2 bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg transition-colors'
+                                  },
+                                  React.createElement('i', { className: 'fab fa-github' }),
+                                  React.createElement('span', null, 'GitHub')
                                 ),
-                                React.createElement('div', null,
-                                    React.createElement('h4', { className: 'text-xl font-semibold mb-3 text-purple-400' }, 'Features'),
-                                    React.createElement('ul', { className: 'space-y-2' },
-                                        project.features.map(feature =>
-                                            React.createElement('li', {
-                                                key: feature,
-                                                className: 'flex items-center text-gray-300'
-                                            },
-                                                React.createElement('i', { className: 'fas fa-check text-green-400 mr-3' }),
-                                                feature
-                                            )
-                                        )
-                                    )
-                                )
+                              React.createElement(
+                                'a',
+                                {
+                                  href: project.caseUrl || project.page,
+                                  target: '_blank',
+                                  rel: 'noopener noreferrer',
+                                  className: `flex items-center space-x-2 bg-gradient-to-r ${project.color} hover:opacity-80 px-4 py-2 rounded-lg transition-opacity`
+                                },
+                                React.createElement('i', { className: 'fas fa-external-link-alt' }),
+                                React.createElement('span', null, 'View Project')
+                              )
                             )
+                          ),
+                  
+                          // right column (text)
+                          React.createElement(
+                            'div',
+                            { className: 'space-y-6' },
+                            React.createElement(
+                              'div',
+                              null,
+                              React.createElement('h4', { className: 'text-xl font-semibold mb-3 text-purple-400' }, 'Description'),
+                              React.createElement('p', { className: 'text-gray-300 leading-relaxed' }, project.details)
+                            ),
+                            React.createElement(
+                              'div',
+                              null,
+                              React.createElement('h4', { className: 'text-xl font-semibold mb-3 text-purple-400' }, 'Technologies'),
+                              React.createElement(
+                                'div',
+                                { className: 'flex flex-wrap gap-2' },
+                                project.technologies.map(tech =>
+                                  React.createElement(
+                                    'span',
+                                    { key: tech, className: 'bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30' },
+                                    tech
+                                  )
+                                )
+                              )
+                            ),
+                            React.createElement(
+                              'div',
+                              null,
+                              React.createElement('h4', { className: 'text-xl font-semibold mb-3 text-purple-400' }, 'Features'),
+                              React.createElement(
+                                'ul',
+                                { className: 'space-y-2' },
+                                project.features.map(feature =>
+                                  React.createElement(
+                                    'li',
+                                    { key: feature, className: 'flex items-center text-gray-300' },
+                                    React.createElement('i', { className: 'fas fa-check text-green-400 mr-3' }),
+                                    feature
+                                  )
+                                )
+                              )
+                            )
+                          )
                         )
-                    )
-                );
-            };
+                      )
+                    );
+                  };
+                  
         
-            // devolvemos a secção + o modal
             return React.createElement(React.Fragment, null,
                 React.createElement('section', { id: 'projects', className: 'py-20 px-4' },
                     React.createElement('div', { className: 'max-w-6xl mx-auto' },
                         React.createElement('h2', { className: 'text-5xl md:text-6xl font-bold text-center mb-16 gradient-text' }, 'My Projects'),
         
-                        React.createElement('h3', { className: 'text-3xl font-semibold mb-8 text-center text-purple-400' }, 'Web Design'),
+                        React.createElement('h3', { className: 'text-3xl font-semibold mb-8 text-center text-purple-400' }, 'UX/UI Designer'),
                         React.createElement('div', { className: 'flex flex-wrap justify-center gap-8 mb-12' },
-                            projects.filter(p => p.category === 'Web Design').map(renderProjectCard)
+                            projects.filter(p => p.category === 'UX/UI Designer').map(renderProjectCard)
                         ),
         
                         React.createElement('h3', { className: 'text-3xl font-semibold mb-8 text-center text-purple-400' }, 'Web Developer'),
